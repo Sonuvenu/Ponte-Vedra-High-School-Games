@@ -1,4 +1,4 @@
-(function play() {
+(function() {
   var SIZE = 500; // Size of the play-field in pixels
   var GRID_SIZE = SIZE / 50;
   var c = document.getElementById('c');
@@ -36,13 +36,10 @@
     }
 
     // Did we eat a candy? Detect if our head is in the same cell as the candy
-    var score;
     if (candy && candy.x === newHead.x && candy.y === newHead.y) {
       candy = null;
       snakeLength += 20;
-      score = score + 1;
     }
-
 
     context.fillStyle = '#002b36';
     context.fillRect(0, 0, SIZE, SIZE); // Reset the play area
@@ -59,8 +56,6 @@
     // Detect wall collisions
     if (newHead.x < 0 || newHead.x >= SIZE || newHead.y < 0 || newHead.y >= SIZE) {
       end = true;
-      document.getElementById("buttonAppear").innerHTML = "<button onclick='play()'>Replay Tetris</button>";
-    }
     }
 
     context.fillStyle = '#268bd2';
@@ -83,9 +78,10 @@
     context.fillRect(candy.x, candy.y, GRID_SIZE, GRID_SIZE); // Paint the candy
   }
 
-  window.onload = function(){
+  window.onload = function() {
     setInterval(tick, 100); // Kick off the game loop!
-    window.onkeydown = function() {
+    window.onkeydown = function(e) {
       newDirection = {37: -1, 38: -2, 39: 1, 40: 2}[e.keyCode] || newDirection;
-    };};
+    };
+  };
 })();
