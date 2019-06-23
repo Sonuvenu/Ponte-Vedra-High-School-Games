@@ -3,6 +3,8 @@
 
 Made by Garrett Ludescher, Sonu Venu, and Victor Polisetty
 
-Honestly, I don't know how to do any of this but i'm here for moral support.
+I(Garrett) made the homepage, and pong. It was quite a challenging task but youtube really helped me out. And so did Sonu.
 
--Garrett
+
+
+-Gamers gotta game 😎
