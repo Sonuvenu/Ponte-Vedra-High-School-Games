@@ -1,10 +1,68 @@
 <!DOCTYPE html>
 	<html>
+	<link rel="stylesheet" type="text/css" href="home.css">
 		<head>
+			<style>
+			html {
+				background-color: #262626;
+			}
+			button{
+				float: right;
+			}
+			.content {
+			padding: 16px;
+			}
+
+			/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+			.sticky {
+				position: fixed;
+				top: 0;
+				width: 100%;
+			}
+
+			/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+			.sticky + .content {
+				padding-top: 60px;
+			}
+			</style>
+
+						<div id="box5">
+							<div class="topnav" id= "navbar">
+								<!-- Centered link -->
+								<div class="topnav-centered">
+									<a href="parallax.html"><img src="omnigames logo.png" width="60" height="37.5"></a>
+								</div>
+
+								<!-- Left-aligned links (default) -->
+								<a href="pong.html">Pong</a>
+								<a href="snake.html" class="active">Snake</a>
+								<a href="tetris.html">Tetris</a>
+
+								<!-- Right-aligned links -->
+								<div class="topnav-right">
+									<a href="news.html">News</a>
+									<a href="contact.html">Contact</a>
+								</div>
+							</div>
+						</div>
 			<title>Omni Games - Snake</title>
+			<style>
+			canvas {
+				padding-left: 0;
+				padding-right: 0;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				width: 800px;
+			}
+			</style>
 		</head>
 		<body>
 			<canvas id='c'></canvas>
 			<script src='snake.js'></script>
+		      <div id="buttonAppear"></div>
+		      <div id="score"></div>
+		      <canvas id='c'></canvas>
+		      <script src='snake.js'></script>
 		</body>
 	</html>

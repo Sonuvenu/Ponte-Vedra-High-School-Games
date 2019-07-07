@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Omni Games - Tetris</title>
-    <style>
-      body {
-        background: #202028;
-        color: #fff;
-        font-family: sans-serif;
-        font-size: 2em;
-        text-align: center;
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <head>
+      <title>Omni Games - Tetris</title>
+      <style>
+        body {
+          background: #262626;
+          color: #fff;
+          font-family: sans-serif;
+          font-size: 2em;
+          text-align: center;
+        }
+        canvas {
+          border: solid .2em #fff;
+          height: 90vh;
+        }
+      .content {
+      padding: 16px;
       }
-      canvas {
-        border: solid .2em #fff;
-        height: 90vh;
+
+      /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+      .sticky {
+      	position: fixed;
+      	top: 0;
+      	width: 100%;
       }
-    </style>
-</head>
-<body>
-    <div id="buttonAppear"></div>
-    <div id="score"></div>
-    <canvas id="tetris" width="240" height="400"></canvas>
-    <script src="tetris.js"></script>
-</body>
+
+      /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+      .sticky + .content {
+      	padding-top: 60px;
+      }
+      </style>
+
+      			<div id="box5">
+      				<div class="topnav" id= "navbar">
+      					<!-- Centered link -->
+      					<div class="topnav-centered">
+      						<a href="parallax.html"><img src="omnigames logo.png" width="60" height="37.5"></a>
+      					</div>
+
+      					<!-- Left-aligned links (default) -->
+      					<a href="pong.html">Pong</a>
+      					<a href="snake.html">Snake</a>
+      					<a href="tetris.html" class="active">Tetris</a>
+
+      					<!-- Right-aligned links -->
+      					<div class="topnav-right">
+      						<a href="news.html">News</a>
+      						<a href="contact.html">Contact</a>
+      					</div>
+      				</div>
+      			</div>
+  </head>
+  <body>
+      <div id="buttonAppear"></div>
+      <div id="score"></div>
+      <canvas id="tetris" width="240" height="400"></canvas>
+      <script src="tetris1.js"></script>
+  </body>
 </html>
