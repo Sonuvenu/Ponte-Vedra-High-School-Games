@@ -1,9 +1,9 @@
 const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
-var end = false;
+let end = false;
 
 context.scale(20, 20);
-  if(end==false){
+
     function arenaSweep() {
         let rowCount = 1;
         outer: for (let y = arena.length -1; y > 0; --y) {
@@ -170,7 +170,7 @@ context.scale(20, 20);
                        (player.matrix[0].length / 2 | 0);
         if (collide(arena, player)) {
           end = true;
-          document.getElementById("buttonAppear").innerHTML = "<button onclick='resetGame()'>Replay Tetris</button>";
+          document.getElementById("buttonAppear").innerHTML = "<button style ='background-color: #4CAF50; border: none; color: white; padding: 15px 32px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px;' onclick='resetGame()'>Replay Tetris</button>";
         }
     }
 
@@ -194,6 +194,7 @@ context.scale(20, 20);
     let x = 0;
 
     let lastTime = 0;
+
     function update(time = 0) {
         const deltaTime = time - lastTime;
 
@@ -208,9 +209,11 @@ context.scale(20, 20);
         }
 
         lastTime = time;
+        if (!end) {
+          draw();
+          requestAnimationFrame(update);
+        }
 
-        draw();
-        requestAnimationFrame(update);
     }
 
     function updateScore() {
@@ -255,10 +258,12 @@ context.scale(20, 20);
     function resetGame(){
       arena.forEach(row => row.fill(0));
       player.score = 0;
+      end = false;
+      x = 0;
       updateScore();
+      update();
     }
 
     playerReset();
     updateScore();
     update();
-  }

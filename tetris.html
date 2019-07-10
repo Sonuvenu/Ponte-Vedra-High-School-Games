@@ -11,25 +11,36 @@
           font-size: 2em;
           text-align: center;
         }
+
         canvas {
           border: solid .2em #fff;
           height: 90vh;
         }
-      .content {
-      padding: 16px;
-      }
 
-      /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-      .sticky {
-      	position: fixed;
-      	top: 0;
-      	width: 100%;
-      }
+        body div.relative {
+          float: right;
+          height: 160px;
+          position: relative;
+          right: 610px;
+          top: 320px;
+        }
 
-      /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-      .sticky + .content {
-      	padding-top: 60px;
-      }
+        .content {
+        padding: 16px;
+        }
+
+        /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+        .sticky {
+        	position: fixed;
+        	top: 0;
+        	width: 100%;
+        }
+
+
+        /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+        .sticky + .content {
+        	padding-top: 60px;
+        }
       </style>
 
       			<div id="box5">
@@ -53,10 +64,14 @@
       			</div>
   </head>
   <body>
-      <div id="buttonAppear"></div>
-      Level: <div id="level"></div>   
-      Score: <div id="score"></div>
-      <canvas id="tetris" width="240" height="400"></canvas>
-      <script src="tetris1.js"></script>
+    <h1 style="position:absolute;left:39%;top:10px;font-size:70px; color:white">Tetris</h1>
+    <hr style="margin-top:85px; color:white">
+    <div class="relative">
+    <div id="buttonAppear"></div>
+    Level: <div id="level"></div>
+    Score: <div id="score"></div>
+    </div>
+    <canvas id="tetris" width="240" height="400"></canvas>
+    <script src="tetris1.js"></script>
   </body>
 </html>
